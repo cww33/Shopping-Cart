@@ -1,6 +1,6 @@
 # shopping_cart.py
 
-#from pprint import pprint
+#from print import print
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -25,7 +25,45 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
-# pprint(products)
+#print(products)
+# print(products)
 
 # TODO: write some Python code here to produce the desired output
+
+
+userreceipt= []
+
+userproducts== float(input("Please input a product identifier: "))
+if userproducts<1 or userproducts>20 or userproducts!= int:
+        print("Hey, are you sure that product identifier is correct? Please try again!")
+    elif userproducts== float(input("Please input a product identifier: "))
+for userproducts in range(1,20):
+      userproducts= userreceipt.append[] #programiz.com
+    userproducts= float(input("Please input a product identifier")
+if userproducts<1 or userproducts>20 or userproducts!= int:
+        print("Hey, are you sure that product identifier is correct? Please try again!")    
+    elif userproducts ==("done").upper()
+        break
+
+for i in usercheckout:
+    print(userreceipt[0]) 
+    
+
+
+#if userproducts != [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]:
+    #print("Hey, are you sure that product identifier is correct? Please try again!")
+    #userproducts input("Please input a product identifier")
+    #elif userproducts = ("done"):
+       # print ("no inputs detected")
+        #break
+
+
+#for userproducts = input("Please input product identifier")
+    #while userproducts>=1 and userproducts <=20 
+
+
+
+
+
+
+

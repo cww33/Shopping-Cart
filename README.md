@@ -6,3 +6,5 @@
 #From within the virtual environment, demonstrate your ability to run the Python script from the #command-line:
 
 #python shopping_cart.py
+
+
