@@ -36,10 +36,11 @@ while True:
     userproduct= input("Please input the product identifier: ")
     userreceipt.append(userproduct)
     if userproduct == ("DONE"):
+        userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
         print (userreceipt)
         break
-    #elif userproduct != range(1, 20):
-       # print ("Ensure it is a valid product identifier")
+    elif int(userproduct) not in range(1, 20, 1):
+       print ("Ensure it is a valid product identifier")
    # else:
        # userreceipt.append(userproduct)
     
