@@ -31,6 +31,8 @@ products = [
 # TODO: write some Python code here to produce the desired output
 from datetime import date
 today = date.today()
+#tax = (subtotal*0.0875)
+#total = subtotal + tax
 userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 while True:
@@ -46,6 +48,16 @@ while True:
         print("Checkout date: ", today)
         print("---------------------------------")
         print("---------------------------------")
+        print("Purchased Products: ")
+        #print the items by id from list with product names and prices
+        print("---------------------------------")
+        #print("Subtotals: ", )
+        #print ("Tax: ", tax) 
+        #print("Total: ", total)
+        print("---------------------------------")
+        print("Thanks please come again soon!")
+        print("---------------------------------")
+
 
 
         print (userreceipt)
