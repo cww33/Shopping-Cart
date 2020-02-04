@@ -31,22 +31,22 @@ products = [
 # TODO: write some Python code here to produce the desired output
 
 userreceipt =[]
-
+productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 while True:
-    userproduct= input("Please input the product identifier: ")
-    userreceipt.append(userproduct)
-    if userproduct == ("DONE"):
+    userproduct= (input("Please input the product identifier: "))
+    #userreceipt.append(userproduct)
+    if userproduct == ("0"):
         userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
         print (userreceipt)
         break
-    elif int(userproduct) not in range(1, 20, 1):
-       print ("Ensure it is a valid product identifier")
-   # else:
-       # userreceipt.append(userproduct)
+    elif (int(userproduct)) not in productlist:
+        print ("Ensure it is a valid product identifier")
+        userreceipt=userreceipt[:-1]
+    #userproduct= int(input("Please input the product identifier: "))
+    userreceipt.append(userproduct)
     
 
     #print (userreceipt)
-
 
 
 
