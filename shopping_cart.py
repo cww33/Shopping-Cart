@@ -29,21 +29,32 @@ products = [
 # print(products)
 
 # TODO: write some Python code here to produce the desired output
-
+from datetime import date
+today = date.today()
 userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 while True:
     userproduct= (input("Please input the product identifier: "))
-    #userreceipt.append(userproduct)
+    userreceipt.append(userproduct)
     if userproduct == ("0"):
         userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
+        print("---------------------------------")
+        print("Carl's Consumables")
+        print("---------------------------------")
+        print("Phone Number: (202)-699-2045")
+        print("---------------------------------")
+        print("Checkout date: ", today)
+        print("---------------------------------")
+        print("---------------------------------")
+
+
         print (userreceipt)
         break
-    elif (int(userproduct)) not in productlist:
+    elif ((userproduct)) not in str(productlist):
         print ("Ensure it is a valid product identifier")
         userreceipt=userreceipt[:-1]
     #userproduct= int(input("Please input the product identifier: "))
-    userreceipt.append(userproduct)
+    #userreceipt.append(userproduct)
     
 
     #print (userreceipt)
