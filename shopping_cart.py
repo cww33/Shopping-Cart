@@ -1,6 +1,6 @@
 # shopping_cart.py
 
-#from print import print
+
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -30,7 +30,9 @@ products = [
 
 # TODO: write some Python code here to produce the desired output
 from datetime import date
+from datetime import datetime
 today = date.today()
+time= datetime.now()
 #tax = (subtotal*0.0875)
 #total = subtotal + tax
 userreceipt =[]
@@ -47,7 +49,7 @@ while True:
         print("---------------------------------")
         print("Phone Number: (202)-699-2045")
         print("---------------------------------")
-        print("Checkout date: ", today)
+        print("Checkout date:" + {:.2f}.format(time))
         print("---------------------------------")
         print("---------------------------------")
         print("Purchased Products: ")
@@ -55,7 +57,7 @@ while True:
             receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
             receiptproduct=receiptproduct[0]
             cost =cost+receiptproduct["price"]
-            print("Selected Products: " + receiptproduct["name"] + " " + str(receiptproduct["price"]))
+            print("Selected Products: " + receiptproduct["name"] + " ($" + str(receiptproduct["price"]) + ")")
             
         print ("Total Price " + str(cost))
             #if i["id"] in userreceipt:
