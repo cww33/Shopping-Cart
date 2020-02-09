@@ -35,10 +35,12 @@ today = date.today()
 #total = subtotal + tax
 userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
+cost=0
+
 while True:
     userproduct= (input("Please input the product identifier: "))
-    userreceipt.append(userproduct)
-    if userproduct == ("0"):
+    userreceipt.append(userproduct) #put this at the end
+    if userproduct.upper() == ("DONE"): #it has to be done and gotta do .upper but put this if first before everything else
         userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
         print("---------------------------------")
         print("Carl's Consumables")
@@ -49,22 +51,49 @@ while True:
         print("---------------------------------")
         print("---------------------------------")
         print("Purchased Products: ")
+        for userproduct in userreceipt:
+            receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
+            receiptproduct=receiptproduct[0]
+            cost =cost+receiptproduct["price"]
+            print("Selected Products: " + receiptproduct["name"] + " " + str(receiptproduct["price"]))
+            
+        print ("Total Price " + str(cost))
+            #if i["id"] in userreceipt:
+                #print (i,"($ {:.2f})".format(products[i]))
+        #print([i for i in products if i["id"] in userreceipt])
         #print the items by id from list with product names and prices
         print("---------------------------------")
-        #print("Subtotals: ", )
-        #print ("Tax: ", tax) 
-        #print("Total: ", total)
+       #subtotal= 0
+       #for i in dict.values(products):
+       #    subtotal= subtotal+ i 
+       #print("SUBTOTAL: $", subtotal)
+       #tax= 0.08 * subtotal 
+       #print ("Tax: ", tax) 
+       #
+       #total= 0
+       #total= subtotal + tax
+       #print("Total: ", total)
         print("---------------------------------")
         print("Thanks please come again soon!")
         print("---------------------------------")
+        
 
 
+        #for i in products:
+         #   if i["id"] in userreceipt:
+         #       print (i)
+        #print([i for i in products if i["id"] in userreceipt])
+        
+        #print (userreceipt)
 
-        print (userreceipt)
+
         break
     elif ((userproduct)) not in str(productlist):
         print ("Ensure it is a valid product identifier")
         userreceipt=userreceipt[:-1]
+    
+    
+    
     #userproduct= int(input("Please input the product identifier: "))
     #userreceipt.append(userproduct)
     
