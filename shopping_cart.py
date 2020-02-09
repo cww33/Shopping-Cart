@@ -29,15 +29,17 @@ products = [
 # print(products)
 
 # TODO: write some Python code here to produce the desired output
-from datetime import date
+import datetime
+import time
 from datetime import datetime
-today = date.today()
-time= datetime.now()
+from time import strftime
+now=datetime.now()
+checkouttime= now.strftime("%m/%d/%Y %I:%M %p") #programiz.com --> current datetime
 #tax = (subtotal*0.0875)
 #total = subtotal + tax
 userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
-cost=0
+subtotal=0
 
 while True:
     userproduct= (input("Please input the product identifier: "))
@@ -49,17 +51,18 @@ while True:
         print("---------------------------------")
         print("Phone Number: (202)-699-2045")
         print("---------------------------------")
-        print("Checkout date:" + {:.2f}.format(time))
+        print("Checkout date:" + checkouttime)
         print("---------------------------------")
         print("---------------------------------")
         print("Purchased Products: ")
         for userproduct in userreceipt:
             receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
             receiptproduct=receiptproduct[0]
-            cost =cost+receiptproduct["price"]
-            print("Selected Products: " + receiptproduct["name"] + " ($" + str(receiptproduct["price"]) + ")")
-            
-        print ("Total Price " + str(cost))
+            subtotal =subtotal+receiptproduct["price"]
+            priceusd= (receiptproduct["price"])
+            print("Selected Products: " + receiptproduct["name"] + " ($" + "{0:.2f}".format(priceusd) + ")")
+        print("---------------------------------")    
+        print ("Subtotal "+ "$" + str(subtotal))
             #if i["id"] in userreceipt:
                 #print (i,"($ {:.2f})".format(products[i]))
         #print([i for i in products if i["id"] in userreceipt])
