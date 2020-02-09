@@ -51,7 +51,7 @@ while True:
         print("---------------------------------")
         print("Phone Number: (202)-699-2045")
         print("---------------------------------")
-        print("Checkout date:" + checkouttime)
+        print("Checkout date: " + checkouttime)
         print("---------------------------------")
         print("---------------------------------")
         print("Purchased Products: ")
@@ -60,14 +60,14 @@ while True:
             receiptproduct=receiptproduct[0]
             subtotal =subtotal+receiptproduct["price"]
             priceusd= (receiptproduct["price"])
-            print("Selected Products: " + receiptproduct["name"] + " ($" + "{0:.2f}".format(priceusd) + ")")
+            print("..." + receiptproduct["name"] + " ($" + "{0:.2f}".format(priceusd) + ")")
         print("---------------------------------")   
         taxtotal= subtotal*taxpercentage
         total= float(subtotal)+float(taxtotal) 
         subtotalformated= "{0:.2f}".format(subtotal)
         taxformated= "{0:.2f}".format(taxtotal)
         totalformated= "{0:.2f}".format(total)
-        print ("Subtotal: $" + str(subtotal))
+        print ("Subtotal: $" + str(subtotalformated))
         print ("Tax: $" + str(taxformated))
          
         print ("Total: $"+ str(totalformated))
