@@ -25,8 +25,7 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-#print(products)
-# print(products)
+
 
 # TODO: write some Python code here to produce the desired output
 import datetime
@@ -35,11 +34,12 @@ from datetime import datetime
 from time import strftime
 now=datetime.now()
 checkouttime= now.strftime("%m/%d/%Y %I:%M %p") #programiz.com --> current datetime
-#tax = (subtotal*0.0875)
-#total = subtotal + tax
 userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 subtotal=0
+total=0
+taxpercentage=0.0875
+
 
 while True:
     userproduct= (input("Please input the product identifier: "))
@@ -55,43 +55,23 @@ while True:
         print("---------------------------------")
         print("---------------------------------")
         print("Purchased Products: ")
-        for userproduct in userreceipt:
+        for userproduct in userreceipt: #everything in the for statement is based on Professor Rosetti's walkthrough
             receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
             receiptproduct=receiptproduct[0]
             subtotal =subtotal+receiptproduct["price"]
             priceusd= (receiptproduct["price"])
             print("Selected Products: " + receiptproduct["name"] + " ($" + "{0:.2f}".format(priceusd) + ")")
-        print("---------------------------------")    
-        print ("Subtotal "+ "$" + str(subtotal))
-            #if i["id"] in userreceipt:
-                #print (i,"($ {:.2f})".format(products[i]))
-        #print([i for i in products if i["id"] in userreceipt])
-        #print the items by id from list with product names and prices
+        print("---------------------------------")   
+        taxtotal= subtotal*taxpercentage
+        taxformated= "{0:.2f}".format(taxtotal)
+        print ("Subtotal: $" + str(subtotal))
+        print ("Tax: $" + str(taxformated))
+            
         print("---------------------------------")
-       #subtotal= 0
-       #for i in dict.values(products):
-       #    subtotal= subtotal+ i 
-       #print("SUBTOTAL: $", subtotal)
-       #tax= 0.08 * subtotal 
-       #print ("Tax: ", tax) 
-       #
-       #total= 0
-       #total= subtotal + tax
-       #print("Total: ", total)
+    
         print("---------------------------------")
         print("Thanks please come again soon!")
         print("---------------------------------")
-        
-
-
-        #for i in products:
-         #   if i["id"] in userreceipt:
-         #       print (i)
-        #print([i for i in products if i["id"] in userreceipt])
-        
-        #print (userreceipt)
-
-
         break
     elif ((userproduct)) not in str(productlist):
         print ("Ensure it is a valid product identifier")
@@ -99,11 +79,7 @@ while True:
     
     
     
-    #userproduct= int(input("Please input the product identifier: "))
-    #userreceipt.append(userproduct)
-    
-
-    #print (userreceipt)
+  
 
 
 
