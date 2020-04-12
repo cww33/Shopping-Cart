@@ -39,6 +39,16 @@ productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 subtotal=0
 total=0
 taxpercentage=0.0875
+def print_rinfo:    #defining the receipt info
+    print("---------------------------------")
+    print("Carl's Consumables")
+    print("---------------------------------")
+    print("Phone Number: (202)-699-2045")
+    print("---------------------------------")
+    print("Checkout date: " + checkouttime)
+    print("---------------------------------")
+    print("---------------------------------")
+    print("Purchased Products: ")
 
 
 while True:
