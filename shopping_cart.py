@@ -39,7 +39,11 @@ productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 subtotal=0
 total=0
 taxpercentage=0.0875
-def print_rinfo():    #defining the receipt info
+def print_rinfo():   
+    """
+    Prints all information regarding "Carl Consumables" at the beginning of the receipt
+
+    """
     print("---------------------------------")
     print("Carl's Consumables")
     print("---------------------------------")
@@ -49,21 +53,20 @@ def print_rinfo():    #defining the receipt info
     print("---------------------------------")
     print("---------------------------------")
     print("Purchased Products: ")
-def print_totals():   #defining total to print
-    print("---------------------------------")   
-    taxtotal= subtotal*taxpercentage
-    total= float(subtotal)+float(taxtotal) 
-    subtotalformated= "{0:.2f}".format(subtotal)
-    taxformated= "{0:.2f}".format(taxtotal)
-    totalformated= "{0:.2f}".format(total)
-    print ("Subtotal: $" + str(subtotalformated))
-    print ("Tax: $" + str(taxformated))
-     
-    print ("Total: $"+ str(totalformated))
-     
-    print("---------------------------------")
-    print("Thanks please come again soon!")
-    print("---------------------------------")
+def to_usd(my_price):
+    """
+    Converts a numeric value to usd-formatted string, for printing and display purposes.
+
+    Parameters: my_price (int or float)
+
+    Example: to_usd(99999.99)
+
+    Returns: $99,999.99
+    """  
+    return f"(${my_price:,.2f})"
+
+    
+
 
 while True:
     userproduct= (input("Please input the product identifier: "))
@@ -76,8 +79,21 @@ while True:
             receiptproduct=receiptproduct[0]
             subtotal =subtotal+receiptproduct["price"]
             priceusd= (receiptproduct["price"])
-            print("..." + receiptproduct["name"] + " ($" + "{0:.2f}".format(priceusd) + ")")
-        print_totals()
+            print("..." + receiptproduct["name"] +  to_usd (priceusd) )
+        print("---------------------------------")   
+        taxtotal= subtotal*taxpercentage
+        total= float(subtotal)+float(taxtotal) 
+        subtotalformated= "{0:.2f}".format(subtotal)
+        taxformated= "{0:.2f}".format(taxtotal)
+        totalformated= "{0:.2f}".format(total)
+        print ("Subtotal: $" + str(subtotalformated))
+        print ("Tax: $" + str(taxformated))
+
+        print ("Total: $"+ str(totalformated))
+
+        print("---------------------------------")
+        print("Thanks please come again soon!")
+        print("---------------------------------")
         break
     elif ((userproduct)) not in str(productlist) or int(userproduct)==0:
         print ("Ensure it is a valid product identifier")
