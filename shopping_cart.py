@@ -65,6 +65,11 @@ def to_usd(my_price):
     """  
     return f" ${my_price:,.2f}"
 def print_totals():
+
+    """
+    Prints the Subtotal, Tax, and Total as well as an ending greeting message 
+    at the end of the receipt
+    """
     print("---------------------------------")   
     taxtotal= subtotal*taxpercentage
     total= float(subtotal)+float(taxtotal) 
@@ -80,26 +85,28 @@ def print_totals():
 
     
 
+if __name__ == "__main__":
+    while True:
+        userproduct= (input("Please input the product identifier: "))
+        userreceipt.append(userproduct) #put this at the end
+        if userproduct.upper() == ("DONE"): #it has to be done and gotta do .upper but put this if first before everything else
+            userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
+            print_rinfo() #printing out the previously defined receipt information
+            for userproduct in userreceipt: #everything in the for statement is based on Professor Rosetti's walkthrough
+                receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
+                receiptproduct=receiptproduct[0]
+                subtotal =subtotal+receiptproduct["price"]
+                priceusd= (receiptproduct["price"])
+                print("..." + receiptproduct["name"] +  to_usd (priceusd) )
+            print_totals()
+            break
+        elif ((userproduct)) not in str(productlist) or int(userproduct)==0:
+            print ("Ensure it is a valid product identifier")
+            userreceipt=userreceipt[:-1]
 
-while True:
-    userproduct= (input("Please input the product identifier: "))
-    userreceipt.append(userproduct) #put this at the end
-    if userproduct.upper() == ("DONE"): #it has to be done and gotta do .upper but put this if first before everything else
-        userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
-        print_rinfo() #printing out the previously defined receipt information
-        for userproduct in userreceipt: #everything in the for statement is based on Professor Rosetti's walkthrough
-            receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
-            receiptproduct=receiptproduct[0]
-            subtotal =subtotal+receiptproduct["price"]
-            priceusd= (receiptproduct["price"])
-            print("..." + receiptproduct["name"] +  to_usd (priceusd) )
-        print_totals()
-        break
-    elif ((userproduct)) not in str(productlist) or int(userproduct)==0:
-        print ("Ensure it is a valid product identifier")
-        userreceipt=userreceipt[:-1]
     
-    
+    pass
+
     
   
 
