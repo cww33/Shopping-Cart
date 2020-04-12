@@ -38,6 +38,7 @@ userreceipt =[]
 productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 subtotal=0
 total=0
+taxtotal=0
 taxpercentage=0.0875
 def print_rinfo():   
     """
@@ -73,12 +74,9 @@ def print_totals():
     print("---------------------------------")   
     taxtotal= subtotal*taxpercentage
     total= float(subtotal)+float(taxtotal) 
-    subtotalformated= to_usd(subtotal)
-    taxformated= to_usd(taxtotal)
-    totalformated= to_usd(total)
-    print ("Subtotal:" + str(subtotalformated))
-    print ("Tax:" + str(taxformated))
-    print ("Total:"+ str(totalformated))
+    print ("Subtotal:" + to_usd(subtotal))
+    print ("Tax:" + to_usd(taxtotal))
+    print ("Total:"+ to_usd(total))
     print("---------------------------------")
     print("Thanks please come again soon!")
     print("---------------------------------")

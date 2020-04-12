@@ -29,3 +29,18 @@ After that you will be able to run the Python script from the command-line:
    ```
 
 
+### Run the Program ###
+
+Enter a number between 1 and 20 to select the item you want to put into your shopping cart.
+
+Enter Done when finished selecting all your items.
+
+The program will calculate the subtotal, tax total, and Total price and print out a receipt for you.
+
+### Testing Program ###
+
+To test the program enter:
+ ```
+pytest
+``` 
+and the program will ensure that the program behaves as it should. 
