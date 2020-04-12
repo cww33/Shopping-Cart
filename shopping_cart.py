@@ -39,7 +39,7 @@ productlist= ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 subtotal=0
 total=0
 taxpercentage=0.0875
-def print_rinfo:    #defining the receipt info
+def print_rinfo():    #defining the receipt info
     print("---------------------------------")
     print("Carl's Consumables")
     print("---------------------------------")
@@ -56,15 +56,7 @@ while True:
     userreceipt.append(userproduct) #put this at the end
     if userproduct.upper() == ("DONE"): #it has to be done and gotta do .upper but put this if first before everything else
         userreceipt=userreceipt[:-1] #found a page on stackoverflow on it
-        print("---------------------------------")
-        print("Carl's Consumables")
-        print("---------------------------------")
-        print("Phone Number: (202)-699-2045")
-        print("---------------------------------")
-        print("Checkout date: " + checkouttime)
-        print("---------------------------------")
-        print("---------------------------------")
-        print("Purchased Products: ")
+        print_rinfo() #printing out the previously defined receipt information
         for userproduct in userreceipt: #everything in the for statement is based on Professor Rosetti's walkthrough
             receiptproduct=[i for i in products if str(i["id"]) == str(userproduct)]
             receiptproduct=receiptproduct[0]
