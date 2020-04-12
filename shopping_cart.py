@@ -63,7 +63,20 @@ def to_usd(my_price):
 
     Returns: $99,999.99
     """  
-    return f"(${my_price:,.2f})"
+    return f" ${my_price:,.2f}"
+def print_totals():
+    print("---------------------------------")   
+    taxtotal= subtotal*taxpercentage
+    total= float(subtotal)+float(taxtotal) 
+    subtotalformated= to_usd(subtotal)
+    taxformated= to_usd(taxtotal)
+    totalformated= to_usd(total)
+    print ("Subtotal:" + str(subtotalformated))
+    print ("Tax:" + str(taxformated))
+    print ("Total:"+ str(totalformated))
+    print("---------------------------------")
+    print("Thanks please come again soon!")
+    print("---------------------------------")
 
     
 
@@ -80,20 +93,7 @@ while True:
             subtotal =subtotal+receiptproduct["price"]
             priceusd= (receiptproduct["price"])
             print("..." + receiptproduct["name"] +  to_usd (priceusd) )
-        print("---------------------------------")   
-        taxtotal= subtotal*taxpercentage
-        total= float(subtotal)+float(taxtotal) 
-        subtotalformated= "{0:.2f}".format(subtotal)
-        taxformated= "{0:.2f}".format(taxtotal)
-        totalformated= "{0:.2f}".format(total)
-        print ("Subtotal: $" + str(subtotalformated))
-        print ("Tax: $" + str(taxformated))
-
-        print ("Total: $"+ str(totalformated))
-
-        print("---------------------------------")
-        print("Thanks please come again soon!")
-        print("---------------------------------")
+        print_totals()
         break
     elif ((userproduct)) not in str(productlist) or int(userproduct)==0:
         print ("Ensure it is a valid product identifier")
