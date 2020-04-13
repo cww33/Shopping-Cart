@@ -7,8 +7,8 @@ subtotal=100
 taxtotal=8.75
 
 def test_to_usd():
-    result= to_usd(123456.78)
-    assert result == " $123,456.78"
+    result= to_usd(73498.82 )
+    assert result == " $73,498.82"
 
 def test_taxtotal():
     result=subtotal*taxpercentage
