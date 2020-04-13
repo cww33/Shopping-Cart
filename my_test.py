@@ -16,6 +16,6 @@ def test_taxtotal():
     assert result == 8.75
 
 def test_total():
-    result= total
+    result= subtotal+taxtotal
     assert result == 108.75
 
