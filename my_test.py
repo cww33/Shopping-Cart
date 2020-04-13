@@ -1,6 +1,5 @@
 from shopping_cart import to_usd
 from shopping_cart import taxtotal
-from shopping_cart import total
 from shopping_cart import subtotal
 from shopping_cart import taxpercentage
 
