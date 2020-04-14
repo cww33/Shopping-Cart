@@ -10,7 +10,8 @@ from shopping_cart import taxpercentage
 def test_to_usd():
     result= to_usd(73498.82 )
     assert result == " $73,498.82"
-
+    assert to_usd(9.9) == " $9.90"
+   
 def test_taxtotal():
     result= taxtotal
     assert result == subtotal*taxpercentage
@@ -18,4 +19,6 @@ def test_taxtotal():
 def test_total():
     result= subtotal+taxtotal
     assert result == total
+
+
 
